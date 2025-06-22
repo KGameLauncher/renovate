@@ -23,8 +23,13 @@
       "allowedVersions": "/^[0-9]+\\.[0-9]+\\.[0-9]+$/"
     },
     {
+      "description": "Prevent upgrading from any pre-release to SNAPSHOT",
+      "matchCurrentVersion": "/-(alpha|beta|rc)[.\\d]*$/",
+      "allowedVersions": "!/-SNAPSHOT$/"
+    },
+    {
       "description": "Prevent upgrading from timestamped SNAPSHOT like 2.0.0-20250520.005113-167",
-      "matchCurrentVersion": "/-\\d{8}\\.\\d{6}\\.\\d+$/",
+      "matchCurrentVersion": "/-\\d{8}\\.\\d{6}-\\d+$/",
       "enabled": false
     }
   ]
